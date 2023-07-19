@@ -21,3 +21,10 @@ git config --global alias.ll "log --oneline"
 git config --global --unset alias.s # Eliminar alias
 git config --global --get-regexp alias # Listar alias
 ```
+
+## Cuando quiera subirlo por ejemplo a netifly
+Este comando va a terminar generando una carpeta build.
+
+```sh
+npm run build
+```
