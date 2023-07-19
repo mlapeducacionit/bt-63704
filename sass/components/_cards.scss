@@ -11,7 +11,7 @@
 
     transition: all .2s; /* No puede ser all */
 
-    &:hover,
+    &:hover, /* .card:hover */
     &:focus {
         transform: scale(1.03) skew(0);
         transform-origin: bottom;
@@ -55,7 +55,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transform: all .2s;
+        transition: .2s;
     }
 
     &:hover &__image,
@@ -68,4 +68,32 @@
         padding: 1em;
     }
 
+    @media (min-width: 1024px) {
+        & { /* .card */
+            min-width: 240px;
+        }
+    }
+
+    @media (min-width: 426px) and (max-width: 768px) {
+        & {
+            min-width: 400px;
+            max-width: 500px;
+            height: 200px;
+        }
+
+        &__article { /* .card__article */
+            display: flex;
+        }
+
+        & &__image-container { /* .card .card_image-container */
+            width: 40%;
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+        }
+
+        &:hover &__image-container, /* .card:hover .card__image-container  */
+        &:focus &__image-container { /* .card:focus .card__image-container */
+            width: 40%;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+    }
 }
